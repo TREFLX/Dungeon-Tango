@@ -19,7 +19,7 @@ type model struct {
 	armor     int
 	turn      int
 	gameOver  bool
-	message   string // Добавлено: сообщение о последнем действии
+	message   string
 }
 
 const (
@@ -154,9 +154,9 @@ func main() {
 func Clear() {
 	var cmd *exec.Cmd
 	if runtime.GOOS == "windows" {
-		cmd = exec.Command("cmd", "/c", "cls") // Для Windows
+		cmd = exec.Command("cmd", "/c", "cls")
 	} else {
-		cmd = exec.Command("clear") // Для Linux/macOS
+		cmd = exec.Command("clear")
 	}
 	cmd.Stdout = os.Stdout
 	cmd.Run()
